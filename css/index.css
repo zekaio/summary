@@ -3,6 +3,10 @@
     padding: 0;
 }
 
+img {
+    user-select: none;
+}
+
 @keyframes poptoone {
     from {
         opacity: 0;
@@ -592,37 +596,37 @@ p {
 
 /* 总结 */
 .swiper-slide-active>.summarizetext .one {
-    animation: poptoone 1.5s linear forwards;
+    animation: poptoeightypercent 1s linear forwards;
 }
 
 .swiper-slide-active>.summarizetext .two {
-    animation: poptoone 1.5s linear forwards;
-    animation-delay: 1.5s;
+    animation: poptoeightypercent 1s linear forwards;
+    animation-delay: 1s;
 }
 
 .swiper-slide-active>.summarizetext .three {
-    animation: poptoone 1.5s linear forwards;
-    animation-delay: 3s;
+    animation: poptoeightypercent 1s linear forwards;
+    animation-delay: 1.5s;
 }
 
 .swiper-slide-active>.summarizetext .four {
-    animation: poptoone 1.5s linear forwards;
-    animation-delay: 4.5s;
+    animation: poptoeightypercent 1s linear forwards;
+    animation-delay: 2s;
 }
 
 .swiper-slide-active>.summarizetext .five {
-    animation: poptoone 1.5s linear forwards;
-    animation-delay: 6s;
+    animation: poptoeightypercent 1s linear forwards;
+    animation-delay: 2.5s;
 }
 
 .swiper-slide-active>.summarizetext .six {
-    animation: poptoone 1.5s linear forwards;
-    animation-delay: 7.5s;
+    animation: poptoeightypercent 1s linear forwards;
+    animation-delay: 3s;
 }
 
 .swiper-slide-active>.summarizetext .seven {
-    animation: poptoone 1.5s linear forwards;
-    animation-delay: 9s;
+    animation: poptoeightypercent 1s linear forwards;
+    animation-delay: 3.5s;
 }
 
 .summarize {

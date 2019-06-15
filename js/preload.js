@@ -7,6 +7,7 @@ function horMove() {
 var musiconload = false;
 var imgonload = false;
 //音乐预加载
+var timeout = setTimeout(getIn, 5000);
 var bgmInstance;
 var played = false;
 var loadmusic = new createjs.LoadQueue(false);
@@ -16,17 +17,35 @@ loadmusic.addEventListener("complete", showComplete);
 loadmusic.loadFile({ "id": "bgm", "src": "media/music.mp3" });
 loadmusic.load();
 function showProgress() {
-    if (!(loadmusic.progress == 1 && !imgonload)) {
+    if (loadmusic.progress != 1) {
         document.getElementById("water").style.backgroundPositionY = 38.16 * (1 - loadmusic.progress) + "vw";
         document.getElementById("num").innerText = parseInt(loadmusic.progress * 100);
+    } else {
+        console.log("musiconload");
+        musiconload = true;
+        if (imgonload) {
+            document.getElementById("water").style.backgroundColor = "rgb(191,222,255)";
+            document.getElementById("water").style.backgroundPositionY = "0";
+            document.getElementById("num").innerText = 100;
+            clearInterval(horMoveInter);
+            modifyPosition();
+        }
     }
 }
+
 function showComplete() {
-    console.log("musiconload");
-    bgmInstance = createjs.Sound.createInstance("bgm");
+    bgmInstance = createjs.Sound.play("bgm", { interrupt: createjs.Sound.INTERRUPT_ANY, loop: -1 })
+        ;
     bgmInstance.stop();
-    musiconload = true;
-    if (imgonload) {
+}
+
+function getIn() {
+    if (imgonload && musiconload) {
+        console.log("in");
+        document.getElementById("water").style.backgroundColor = "rgb(191,222,255)";
+        document.getElementById("water").style.backgroundPositionY = "0";
+        document.getElementById("num").innerText = 100;
+        clearInterval(horMoveInter);
         modifyPosition();
     }
 }

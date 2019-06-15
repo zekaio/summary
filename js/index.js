@@ -1,15 +1,16 @@
 window.onload = function () {
     imgonload = true;
+    console.log("imgonload");
     if (musiconload) {
+        document.getElementById("water").style.backgroundColor = "rgb(191,222,255)";
+        document.getElementById("water").style.backgroundPositionY = "0";
+        document.getElementById("num").innerText = 100;
+        clearInterval(horMoveInter);
         modifyPosition();
     }
 }
 
 function modifyPosition() {
-    document.getElementById("water").style.backgroundColor = "rgb(191,222,255)";
-    document.getElementById("water").style.backgroundPositionY = "0";
-    document.getElementById("num").innerText = 100;
-    clearInterval(horMoveInter);
     let icon = document.getElementById("icon");
     document.getElementById("main").style.display = "inline";
     /* 首页 */
@@ -89,6 +90,18 @@ function modifyPosition() {
     /* 创意市集end */
 
     /* 总结 */
+    smallfont = 17;
+    smalllineheight = 38;
+    while (document.getElementById("summarizetext").offsetHeight > height * 0.8) {
+        if (smalllineheight > 0) {
+            smalllineheight--;
+        }
+        else {
+            smallfont--;
+        }
+        document.getElementById("summarizetext").style.fontSize = smallfont + "px";
+        document.getElementById("summarizetext").style.lineHeight = smalllineheight + "px";
+    }
     verposition("summarizetext", 5 / 11);
     /* 总结end */
     document.getElementById("loading").style.display = "none";
@@ -307,7 +320,9 @@ function balloonMove() {
 /* 音乐停止 */
 var list = document.getElementsByClassName("icon");
 function stop() {
+    console.log("hh");
     if (played) {
+        console.log("hh1");
         for (let i = 0; i < list.length; i++) {
             list[i].src = "img/icon-stop.png";
             list[i].className = "icon";
@@ -316,6 +331,7 @@ function stop() {
         played = false;
     }
     else {
+        console.log("hh2");
         for (let i = 0; i < list.length; i++) {
             list[i].src = "img/icon.png";
             list[i].className = "icon icon-play";
