@@ -6,6 +6,7 @@ function horMove() {
 }
 var musiconload = false;
 var imgonload = false;
+var showed = false;
 //音乐预加载
 var timeout = setTimeout(getIn, 5000);
 var bgmInstance;
@@ -29,6 +30,7 @@ function showProgress() {
             document.getElementById("num").innerText = 100;
             clearInterval(horMoveInter);
             modifyPosition();
+            showed = true;
         }
     }
 }
@@ -40,8 +42,7 @@ function showComplete() {
 }
 
 function getIn() {
-    if (imgonload && musiconload) {
-        console.log("in");
+    if (imgonload && musiconload && !showed) {
         document.getElementById("water").style.backgroundColor = "rgb(191,222,255)";
         document.getElementById("water").style.backgroundPositionY = "0";
         document.getElementById("num").innerText = 100;
