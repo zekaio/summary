@@ -13,7 +13,7 @@ var loadmusic = new createjs.LoadQueue(false);
 loadmusic.installPlugin(createjs.Sound);
 loadmusic.addEventListener("progress", showProgress);
 loadmusic.addEventListener("complete", showComplete);
-loadmusic.loadFile({ "id": "bgm", "src": "music.mp3" });
+loadmusic.loadFile({ "id": "bgm", "src": "media/music.mp3" });
 loadmusic.load();
 function showProgress() {
     if (!(loadmusic.progress == 1 && !imgonload)) {
