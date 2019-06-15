@@ -1,0 +1,728 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@keyframes poptoone {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes poptoeightypercent {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 0.8;
+    }
+}
+
+@keyframes starFlash {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes cloudmove {
+    from {
+        right: -40vw;
+    }
+
+    to {
+        right: 3vw;
+    }
+}
+
+@keyframes photo1 {
+    0% {
+
+        transform: rotate(-10deg);
+    }
+
+    50% {
+        transform: rotate(5deg);
+    }
+
+    100% {
+        transform: rotate(-10deg);
+    }
+}
+
+@keyframes photo2 {
+    0% {
+        transform: rotate(5deg);
+    }
+
+    50% {
+        transform: rotate(-5deg);
+    }
+
+    100% {
+        transform: rotate(5deg);
+    }
+}
+
+@keyframes carMove {
+    from {
+        bottom: 5.81vw;
+        width: 9.24vw;
+        right: 4.38vw;
+    }
+
+    to {
+        bottom: 3vw;
+        width: 14.7vw;
+        right: 1.5vw;
+    }
+}
+
+@keyframes balloonMove {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(-15deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+
+    }
+}
+
+@keyframes bounceInUp {
+    from {
+        bottom: 25vh;
+        opacity: 0;
+    }
+
+    to {
+        bottom: 35vh;
+        opacity: 1;
+    }
+}
+
+@keyframes turnCircle {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+body {
+    font-size: 17px;
+}
+
+p {
+    font-weight: 500;
+    margin-left: 10%;
+    margin-right: 5%;
+}
+
+.text {
+    line-height: 38px;
+    position: relative;
+    z-index: 5;
+}
+
+.hide {
+    display: none;
+}
+
+.rightthree {
+    margin-left: 54px;
+}
+
+.rightone {
+    margin-left: 18px;
+}
+
+/* 隐藏文本 */
+.none {
+    opacity: 0;
+}
+
+/* 淡入 */
+.swiper-slide-active>.text>.eione {
+    animation: poptoeightypercent 2s linear forwards;
+    animation-delay: 0.5s;
+}
+
+.swiper-slide-active>.text>.eitwo {
+    animation: poptoeightypercent 2s linear forwards;
+    animation-delay: 1.5s;
+}
+
+.swiper-slide-active>.text>.one {
+    animation: poptoone 2s linear forwards;
+    animation-delay: 0.5s;
+}
+
+.swiper-slide-active>.text>.two {
+    animation: poptoone 2s linear forwards;
+    animation-delay: 1.5s;
+}
+
+/* loading */
+
+.loading {
+    background-image: url("../img/loadingbg.jpg");
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    z-index: 999;
+}
+
+.loadingtotal {
+    width: 100%;
+}
+
+.loading-circle {
+    width: 40%;
+    margin-left: 30%;
+}
+
+.water {
+    position: absolute;
+    height: 37.48vw;
+    width: 37.48vw;
+    margin-left: 31.19vw;
+    z-index: 1;
+    border-radius: 50%;
+    background-image: url("../img/water.png");
+    background-repeat: repeat-x;
+    background-position: 0 38.16vw;
+    background-size: 300% 100%;
+}
+
+.progress {
+    z-index: 999;
+    margin-top: 16vw;
+    width: 100%;
+    color: rgb(122, 164, 207);
+    font-weight: 600;
+    text-align: center;
+}
+
+.loadingspan {
+    margin-top: 100px;
+}
+
+.loadingtext {
+    width: 40%;
+    margin-top: 10%;
+    margin-left: 30%;
+}
+
+.loadingplane {
+    position: absolute;
+    margin-left: 30%;
+    width: 40%;
+    z-index: 999;
+    transform-origin: center center;
+    animation: turnCircle 5s linear infinite;
+}
+
+/* loading end */
+
+/* 首页 */
+
+/* 音符 */
+.icon {
+    position: absolute;
+    width: 10%;
+    top: 5vw;
+    right: 5vw;
+    z-index: 999;
+    opacity: 0.8;
+
+}
+
+.icon-play {
+    transform-origin: center center;
+    animation: turnCircle 7s linear infinite;
+}
+
+/* 快速淡入 */
+.swiper-slide-active>.startpagetotal>.text>.one {
+    animation: poptoone 0.5s linear forwards;
+}
+
+.swiper-slide-active>.startpagetotal>.text>.two {
+    animation: poptoone 0.5s linear forwards;
+    animation-delay: 0.25s;
+}
+
+.swiper-slide-active>.startpagetotal>.text>.three {
+    animation: poptoone 0.5s linear forwards;
+    animation-delay: 0.5s;
+}
+
+.swiper-slide-active>.startpagetotal>.text>.four {
+    animation: poptoone 0.5s linear forwards;
+    animation-delay: 1s;
+}
+
+.swiper-slide-active>.startpagetotal>.text>.five {
+    animation: poptoone 0.5s linear forwards;
+    animation-delay: 1.5s;
+}
+
+.swiper-slide-active>.startpagetotal>.lastshow {
+    animation: poptoone 0.5s linear forwards;
+    animation-delay: 2s;
+}
+
+.startpage {
+    background-image: url('../img/startpagebg.jpg');
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.startpagetext {
+    color: #606972;
+}
+
+.fire {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+}
+
+.tips {
+    width: 80%;
+    margin-top: 17%;
+    margin-left: 10%;
+    animation: starFlash 3s linear infinite;
+}
+
+.start {
+    width: 40%;
+    margin-left: 30%;
+}
+
+/* 首页end */
+
+/* 时光 */
+
+.clockimgs {
+    position: absolute;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+}
+
+.clock {
+    background-image: url('../img/clockbg.png');
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.clocktext {
+    color: #606972;
+}
+
+.clockspan {
+    color: #f27935;
+    margin: 0 2%;
+}
+
+.second {
+    transform: rotate(0deg);
+}
+
+.minute {
+    transform: rotate(30deg);
+}
+
+.hour {
+    transform: rotate(120deg);
+}
+
+.zhen {
+    position: absolute;
+    transform-origin: bottom center;
+}
+
+.clockimg {
+    width: 80%;
+    position: absolute;
+}
+
+.capsule {
+    position: absolute;
+    width: 14vw;
+    bottom: 2vh;
+    right: 3vw;
+}
+
+.clocktextimg {
+    position: absolute;
+    right: 5vw;
+    top: 17vw;
+}
+
+/* 时光end */
+
+/* 宝可梦 */
+
+.dream {
+    background-image: url('../img/pokemonbg.jpg');
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.dreamtext {
+    color: #606972;
+}
+
+.dreamspan {
+    color: #9480c2;
+    margin: 0 2%;
+}
+
+.ball {
+    position: absolute;
+    width: 27vw;
+    bottom: 1vh;
+    right: 2vw;
+}
+
+.pokemonstar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+}
+
+.pokemonstars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    animation: starFlash 5s linear infinite;
+}
+
+.pokemons {
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+}
+
+/* 宝可梦end */
+
+/* 流年车站 */
+
+.station {
+    background-image: url('../img/stationbg.jpg');
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.stationtext {
+    color: #606972;
+}
+
+.stationspan {
+    color: #7da884;
+    margin: 0 2%;
+}
+
+.car {
+    position: absolute;
+    bottom: 3vh;
+    right: 8vw;
+}
+
+.moon {
+    position: absolute;
+    top: 17vw;
+    right: 5vw;
+    width: 25vw;
+}
+
+.cloud {
+    position: absolute;
+    width: 40vw;
+    right: -40vw;
+    top: 30vw;
+}
+
+.swiper-slide-active>.cloud {
+    animation: cloudmove 5s linear forwards;
+}
+
+.carriage {
+    position: absolute;
+    z-index: 2;
+    bottom: 5.81vw;
+    width: 9.24vw;
+    right: 4.38vw;
+}
+
+.swiper-slide-active>.car>.carriage {
+    animation: carMove 3s linear forwards;
+}
+
+.pathway {
+    position: relative;
+    width: 18vw;
+    height: auto;
+    z-index: 1;
+}
+
+/* 流年车站end */
+
+/* 照片墙 */
+
+.photowall {
+    background-image: url('../img/photowallbg.jpg');
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.photowalltext {
+    color: #606972;
+}
+
+.photowallspan {
+    color: #b28783;
+    margin: 0 2%;
+}
+
+.line {
+    position: relative;
+    width: 100vw;
+    margin-top: 10vh;
+}
+
+.photo1 {
+    position: absolute;
+    left: 60vw;
+    width: 20vw;
+    transform-origin: top center;
+    transform: rotate(-10deg);
+    animation: photo1 7s linear infinite;
+}
+
+.photo2 {
+    position: absolute;
+    left: 20vw;
+    width: 16vw;
+    transform-origin: top center;
+    transform: rotate(5deg);
+    animation: photo2 5s linear infinite;
+}
+
+.camera {
+    position: absolute;
+    width: 18vw;
+    bottom: 3.5vh;
+    right: 3vw;
+}
+
+/* 照片墙end */
+
+/* 创意市集 */
+
+.market {
+    background-image: url('../img/marketbg.jpg');
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.markettext {
+    color: #606972;
+}
+
+.marketspan {
+    color: #e1bee7;
+    margin: 0 2%;
+}
+
+.starbg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    animation: starFlash 5s linear infinite;
+
+}
+
+.rabbit {
+    position: absolute;
+    width: 23vw;
+    bottom: 1vh;
+    right: 2vw;
+}
+
+/* 创意市集end */
+
+/* 总结 */
+.swiper-slide-active>.summarizetext .one {
+    animation: poptoone 1.5s linear forwards;
+}
+
+.swiper-slide-active>.summarizetext .two {
+    animation: poptoone 1.5s linear forwards;
+    animation-delay: 1.5s;
+}
+
+.swiper-slide-active>.summarizetext .three {
+    animation: poptoone 1.5s linear forwards;
+    animation-delay: 3s;
+}
+
+.swiper-slide-active>.summarizetext .four {
+    animation: poptoone 1.5s linear forwards;
+    animation-delay: 4.5s;
+}
+
+.swiper-slide-active>.summarizetext .five {
+    animation: poptoone 1.5s linear forwards;
+    animation-delay: 6s;
+}
+
+.swiper-slide-active>.summarizetext .six {
+    animation: poptoone 1.5s linear forwards;
+    animation-delay: 7.5s;
+}
+
+.swiper-slide-active>.summarizetext .seven {
+    animation: poptoone 1.5s linear forwards;
+    animation-delay: 9s;
+}
+
+.summarize {
+    background-image: url("../img/summarizebg.jpg");
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.balloon {
+    position: absolute;
+    width: 40%;
+    right: 0;
+    bottom: 0;
+    transform-origin: 75% bottom;
+    animation: balloonMove 8s linear infinite;
+}
+
+.summarizetext {
+    color: #606972;
+}
+
+.summarizespan {
+    color: #a18674;
+    margin: 0 2%;
+}
+
+/* 总结end */
+
+/* end */
+
+.end {
+    background-image: url("../img/endbg.jpg");
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.endtext {
+    width: 40%;
+    margin-left: 30%;
+    z-index: 999;
+}
+
+.endtotal {
+    position: absolute;
+    bottom: 25vh;
+}
+
+.endbtn {
+    width: 40%;
+    margin-left: 30%;
+    margin-top: 25vw;
+    z-index: 999;
+}
+
+.endballoon {
+    position: absolute;
+    width: 40%;
+    bottom: -42.55vw;
+    z-index: 0;
+}
+
+.swiper-slide-active .endbtn {
+    animation: poptoone 1s linear forwards;
+    animation-delay: 3s;
+}
+
+.swiper-slide-active>.endtotal {
+    animation: bounceInUp 3s linear forwards;
+}
+
+/* end end */
+
+/* 箭头 */
+.next {
+    position: absolute;
+    bottom: 1.5vh;
+    left: 45vw;
+    width: 10vw;
+    z-index: 998;
+}
+
+/* 右下角图片在文字出现后显示 */
+.swiper-slide-active>.showafterone {
+    animation: poptoone 2s linear forwards;
+    animation-delay: 1.5s;
+}
+
+.swiper-slide-active>.showaftertwo {
+    animation: poptoone 2s linear forwards;
+    animation-delay: 2.5s;
+}
+
+.swiper-slide-active>.text .showafterone {
+    animation: poptoone 2s linear forwards;
+    animation-delay: 1.5s;
+}
+
+.swiper-slide-active>.text .showaftertwo {
+    animation: poptoone 2s linear forwards;
+    animation-delay: 2.5s;
+}
