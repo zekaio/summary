@@ -36,8 +36,7 @@ function showProgress() {
 }
 
 function showComplete() {
-    bgmInstance = createjs.Sound.play("bgm", { interrupt: createjs.Sound.INTERRUPT_ANY, loop: -1 })
-        ;
+    bgmInstance = createjs.Sound.play("bgm", { interrupt: createjs.Sound.INTERRUPT_ANY, loop: -1 });
     bgmInstance.stop();
 }
 

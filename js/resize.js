@@ -16,4 +16,5 @@ function resize() {
     document.getElementById("water").style.top = parseFloat(document.getElementById("loadingtotal").style.marginTop) + 0.032 * document.getElementById("circle").offsetHeight + "px";
     let topSize = document.getElementById("loadingtotal").style.marginTop;
     document.getElementById("loadingplane").style.top = topSize;
+    document.getElementById("white").style.display = "none";
 }
