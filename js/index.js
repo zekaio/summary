@@ -3,36 +3,41 @@ fetch(host + "backend/test.json", {
 })
     .then(res => res.json())
     .then(res => {
-        document.getElementById("offlinetotal").innerText = res.timecapsule["offline_total"];
-        document.getElementById("onlinetotal").innerText = res.timecapsule["online_total"];
-        document.getElementById("QRtotal").innerText = res.timecapsule["qrcode_total"];
-        document.getElementById("createtotal").innerText = res.timecapsule["qrusers"];
-        document.getElementById("answertotal").innerText = res.timecapsule["question_users"];
-        document.getElementById("sendTotal").innerText = res.timecapsule["send_total"];
-        document.getElementById("offlineSend").innerText = res.timecapsule["offline"];
-        document.getElementById("onlineSend").innerText = res.timecapsule["online"];
-        document.getElementById("onlineReceive").innerText = res.timecapsule["rec_online"];
-        document.getElementById("QRreceive").innerText = res.timecapsule["rec_qr"];
-        document.getElementById("capsuleAnswer").innerText = res.timecapsule["questions"];
-        document.getElementById("adoptpokemon").innerText = res.pokemon["fairy_total"];
-        document.getElementById("ComeTrueDreams").innerText = res.pokemon["complete_total"];
-        document.getElementById("onlineDreamTotal").innerText = res.pokemon["users"];
-        document.getElementById("helpfulPeople").innerText = res.pokemon["helper_num"];
-        document.getElementById("helpNum").innerText = res.pokemon["help_num"];
-        document.getElementById("knowFriend").innerText = res.pokemon["friends"];
-        document.getElementById("getPok").innerText = res.pokemon["fairys"];
-        document.getElementById("ownDreams").innerText = res.pokemon["wishes"];
-        document.getElementById("ownDreamsComeTrue").innerText = res.pokemon["finish"];
-        document.getElementById("getBoard").innerText = res.station["board"];
-        document.getElementById("getTicket").innerText = res.station["passengers"];
-        document.getElementById("busload").innerText = res.station["tickets"];
-        document.getElementById("participant").innerText = res.photo;
-        document.getElementById("selltotal").innerText = res.market["goods"];
-        document.getElementById("buyer").innerText = res.market["people"];
-        // document.getElementById("totalParticipant").innerText = res.summary[""];
-        document.getElementById("propagation").innerText = res.summary["propagation"];
-        document.getElementById("tweet").innerText = res.summary["tweet"];
-        document.getElementById("offline").innerText = res.summary["participants"];
+        if (res.errcode == 401) {
+            // 跳转页面
+            // window.location.href = ;
+        } else {
+            document.getElementById("offlinetotal").innerText = res.timecapsule["offline_total"];
+            document.getElementById("onlinetotal").innerText = res.timecapsule["online_total"];
+            document.getElementById("QRtotal").innerText = res.timecapsule["qrcode_total"];
+            document.getElementById("createtotal").innerText = res.timecapsule["qrusers"];
+            document.getElementById("answertotal").innerText = res.timecapsule["question_users"];
+            document.getElementById("sendTotal").innerText = res.timecapsule["send_total"];
+            document.getElementById("offlineSend").innerText = res.timecapsule["offline"];
+            document.getElementById("onlineSend").innerText = res.timecapsule["online"];
+            document.getElementById("onlineReceive").innerText = res.timecapsule["rec_online"];
+            document.getElementById("QRreceive").innerText = res.timecapsule["rec_qr"];
+            document.getElementById("capsuleAnswer").innerText = res.timecapsule["questions"];
+            document.getElementById("adoptpokemon").innerText = res.pokemon["fairy_total"];
+            document.getElementById("ComeTrueDreams").innerText = res.pokemon["complete_total"];
+            document.getElementById("onlineDreamTotal").innerText = res.pokemon["users"];
+            document.getElementById("helpfulPeople").innerText = res.pokemon["helper_num"];
+            document.getElementById("helpNum").innerText = res.pokemon["help_num"];
+            document.getElementById("knowFriend").innerText = res.pokemon["friends"];
+            document.getElementById("getPok").innerText = res.pokemon["fairys"];
+            document.getElementById("ownDreams").innerText = res.pokemon["wishes"];
+            document.getElementById("ownDreamsComeTrue").innerText = res.pokemon["finish"];
+            document.getElementById("getBoard").innerText = res.station["board"];
+            document.getElementById("getTicket").innerText = res.station["passengers"];
+            document.getElementById("busload").innerText = res.station["tickets"];
+            document.getElementById("participant").innerText = res.photo;
+            document.getElementById("selltotal").innerText = res.market["goods"];
+            document.getElementById("buyer").innerText = res.market["people"];
+            // document.getElementById("totalParticipant").innerText = res.summary[""];
+            document.getElementById("propagation").innerText = res.summary["propagation"];
+            document.getElementById("tweet").innerText = res.summary["tweet"];
+            document.getElementById("offline").innerText = res.summary["participants"];
+        }
     })
 
 window.onload = function () {
