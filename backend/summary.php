@@ -134,17 +134,19 @@ $res->close();
 
 $res = $link->query("select count(*) as tickets from station");
 $row = $res->fetch_assoc();
-$data['station']['tickets'] = $row['tickets'];
+$data['station']['tickets'] = $row['tickets'] + 237;
 $res->close();
+
+$data['station']['board'] = 577;
 
 $link->close();
 
 // 照片墙
-$data['photo'] = 100; // 拍照人数
+$data['photo'] = 136; // 拍照人数
 
 // 创意市集
-$data['market']['goods'] = 100; // 商品数
-$data['market']['people'] = 100; // 购买人数
+$data['market']['goods'] = 1098; // 商品数
+$data['market']['people'] = 652; // 购买人数
 
 // 总宣及其他
 $link = new mysqli('localhost', 'user', 'password', 'database');
@@ -155,8 +157,8 @@ $data['summary']['propagation'] = $row['propagation'];
 $res->close();
 $link->close();
 
-$data['summary']['tweet'] = 10000;
-$data['summary']['participants'] = 10000;
+$data['summary']['tweet'] = 24013;
+// $data['summary']['participants'] = 10000;
 
 echo json_encode($data);
 exit();
