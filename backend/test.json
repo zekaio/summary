@@ -1,0 +1,42 @@
+{
+    "timecapsule": {
+        "offline_total": "352",
+        "online_total": "912",
+        "qrcode_total": "7006",
+        "qrusers": "7413",
+        "question_users": "552",
+        "questions_total": "1122",
+        "offline": "0",
+        "online": "8",
+        "send_total": 8,
+        "rec_online": "2",
+        "rec_qr": "6",
+        "questions": "0"
+    },
+    "pokemon": {
+        "fairy_total": "5362",
+        "complete_total": "2106",
+        "users": "886",
+        "helper_num": "937",
+        "help_num": "0",
+        "friends": "0",
+        "fairys": "0",
+        "wishes": "0",
+        "finish": "0"
+    },
+    "station": {
+        "board": "123",
+        "passengers": "439",
+        "tickets": "384"
+    },
+    "photo": 100,
+    "market": {
+        "goods": 100,
+        "people": 100
+    },
+    "summary": {
+        "propagation": "10629",
+        "tweet": 10000,
+        "participants": 10000
+    }
+}

@@ -13,16 +13,19 @@
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/createjs@1.0.1/builds/1.0.0/createjs.min.js"></script>
   <script src="https://cdn.bootcss.com/Swiper/4.5.0/js/swiper.min.js"></script>
+  <script src="js/conf.js"></script>
   <script src="js/resize.js"></script>
 </head>
 
 <body>
+  <!-- white -->
+  <div class="white" id="white"></div>
   <!-- loading -->
   <div id="loading" class="loading">
     <div class="loadingtotal" id="loadingtotal">
       <img src="img/loading-circle.svg" class="loading-circle" id="circle" onclick="return false">
       <div class="water" id="water">
-        <div class="progress"><span id="num" class="loadingNum">&nbsp;&nbsp;0</span>%</div>
+        <div class="progress"><span id="num" class="loadingNum">0</span>%</div>
       </div>
       <div id="progress"></div>
       <img src="img/loadingplane.png" class="loadingplane" id="loadingplane" onclick="return false" onload="resize()">
@@ -33,7 +36,6 @@
 
   <div class="swiper-container swiperTotal" id="main" style="display: none">
     <div class="swiper-wrapper">
-
       <!-- 首页 -->
       <div class="swiper-slide startpage" id="startpage">
         <img src="img/icon-stop.png" class="icon" onclick="stop(); return false">
@@ -51,7 +53,6 @@
           </div>
         </div>
       </div>
-
       <!-- 时光胶囊 -->
       <div class="swiper-slide clock">
         <img src="img/icon-stop.png" class="icon" onclick="stop(); return false">
@@ -69,11 +70,11 @@
               <div class="text clocktext" id="clocktext1">
                 <div class="eione none">
                   <p>在时光胶囊活动中</p>
-                  <p>线下寄信共<span class="clockspan" id="offlinetotal">300</span>封</p>
-                  <p>线上寄信共<span class="clockspan" id="onlinetotal">1000</span>封</p>
-                  <p>线上二维码寄信<span class="clockspan" id="ORtotal">2000</span>封</p>
-                  <p>共有<span class="clockspan" id="createtotal">1000</span>人生成了自己的寄信二维码</p>
-                  <p>共有<span class="clockspan" id="answertotal">1000</span>人回答了问题胶囊</p>
+                  <p>线下寄信共<span class="clockspan" id="offlinetotal"></span>封</p>
+                  <p>线上寄信共<span class="clockspan" id="onlinetotal"></span>封</p>
+                  <p>线上二维码寄信<span class="clockspan" id="QRtotal"></span>封</p>
+                  <p>共有<span class="clockspan" id="createtotal"></span>人生成了自己的寄信二维码</p>
+                  <p>共有<span class="clockspan" id="answertotal"></span>人回答了问题胶囊</p>
                 </div>
                 </br>
                 <div class="eitwo none">
@@ -87,12 +88,12 @@
               <div class="text clocktext" id="clocktext2">
                 <div class="eione none">
                   <p>纸短情长<span class="rightone"></span>感谢你参与时光胶囊</p>
-                  <p>你一共寄出了<span class="clockspan" id="sendTotal">100</span>封书信</p>
-                  <p>其中有<span class="clockspan" id="offlineSend">100</span>封线下信</p>
-                  <p><span class="rightthree"></span><span class="clockspan" id="onlineSend">100</span>封线上信</p>
-                  <p>收到了<span class="clockspan" id="onlineReceive">100</span>封线上书信</p>
-                  <p><span class="rightthree"></span><span class="clockspan" id="QRreceive">100</span>封二维码寄信</p>
-                  <p>在问题胶囊里回答了<span class="clockspan" id="capsuleAnswer">100</span>个问题</p>
+                  <p>你一共寄出了<span class="clockspan" id="sendTotal"></span>封书信</p>
+                  <p>其中有<span class="clockspan" id="offlineSend"></span>封线下信</p>
+                  <p><span class="rightthree"></span><span class="clockspan" id="onlineSend"></span>封线上信</p>
+                  <p>收到了<span class="clockspan" id="onlineReceive"></span>封线上书信</p>
+                  <p><span class="rightthree"></span><span class="clockspan" id="QRreceive"></span>封二维码寄信</p>
+                  <p>在问题胶囊里回答了<span class="clockspan" id="capsuleAnswer"></span>个问题</p>
                 </div>
               </div>
             </div>
@@ -112,10 +113,10 @@
               <div class="text dreamtext" id="dreamtext1">
                 <div class="eione none">
                   <p>在许愿宝可梦活动里</p>
-                  <p>共有<span class="dreamspan" id="adoptpokemon">1000</span>个许愿精灵被领走</p>
-                  <p>共有<span class="dreamspan" id="ComeTrueDreams">1000</span>个愿望被实现</p>
-                  <p>线上共有<span class="dreamspan" id="onlineDreamTotal">1000</span>人写下愿望</p>
-                  <p><span class="dreamspan" id="helpfulPeople">1000</span>人帮人实现愿望获得了精灵</p>
+                  <p>共有<span class="dreamspan" id="adoptpokemon"></span>个许愿精灵被领走</p>
+                  <p>共有<span class="dreamspan" id="ComeTrueDreams"></span>个愿望被实现</p>
+                  <p>线上共有<span class="dreamspan" id="onlineDreamTotal"></span>人写下愿望</p>
+                  <p><span class="dreamspan" id="helpfulPeople"></span>人帮人实现愿望获得了精灵</p>
                   <p>希望这一场相遇能让你获得一段缘分</p>
                 </div>
               </div>
@@ -127,15 +128,15 @@
                   <p>星辰可梦<span class="rightone"></span>期你所愿</p>
                   <p>感谢你参与许愿宝可梦</p>
                   <p>在这次线上活动中</p>
-                  <p>你一共帮人实现了<span class="dreamspan" id="helpNum">1000</span>个愿望</p>
-                  <p>认识了<span class="dreamspan" id="knowFriend">100</span>个朋友</p>
-                  <p>获得了<span class="dreamspan" id="getPok">100</span>个精灵</p>
+                  <p>你一共帮人实现了<span class="dreamspan" id="helpNum"></span>个愿望</p>
+                  <p>认识了<span class="dreamspan" id="knowFriend"></span>个朋友</p>
+                  <p>获得了<span class="dreamspan" id="getPok"></span>个精灵</p>
                 </div>
-                <div id="pokemonbr"></br></div>
+                </br>
                 <div class="eitwo none">
                   <p>而你也有贵人相助</p>
-                  <p>你一共许下了<span class="dreamspan" id="ownDreams">100</span>个愿望</p>
-                  <p>被实现了<span class="dreamspan" id="ownDreamsComeTrue">100</span>个</p>
+                  <p>你一共许下了<span class="dreamspan" id="ownDreams"></span>个愿望</p>
+                  <p>被实现了<span class="dreamspan" id="ownDreamsComeTrue"></span>个</p>
                   <p>有时你的努力是你最大的助力</p>
                 </div>
               </div>
@@ -151,17 +152,13 @@
       <!-- 流年车站 -->
       <div class="swiper-slide station">
         <img src="img/icon-stop.png" class="icon" onclick="stop(); return false">
-        <!-- <div class="swiper-container swiperStation"> -->
-        <!-- <div class="swiper-wrapper"> -->
-        <!-- 流年1 -->
-        <!-- <div class="swiper-slide"> -->
         <div class="text stationtext" id="stationtext">
           <div class="eione none">
             <p>在流年车站活动中</p>
-            <p>共收到<span class="stationspan" id="getBoard">100</span>块祈愿木牌</p>
-            <p><span class="stationspan" id="getTicket">100</span>张流年车票</p>
+            <p>共收到<span class="stationspan" id="getBoard"></span>块祈愿木牌</p>
+            <p><span class="stationspan" id="getTicket"></span>张流年车票</p>
             <p>有7辆列车启航</p>
-            <p>共计载客量<span class="stationspan" id="busload">100</span>人次</p>
+            <p>共计载客量<span class="stationspan" id="busload"></span>人次</p>
           </div>
           </br>
           <div class="eitwo none">
@@ -170,23 +167,6 @@
             <p>前程万里</p>
           </div>
         </div>
-        <!-- </div> -->
-        <!-- <div class="swiper-container swiperStation"> -->
-        <!-- <div class="swiper-wrapper"> -->
-        <!-- 流年2 -->
-        <!-- <div class="swiper-slide">
-              <div class="text stationtext" id="stationtext2">
-                <div class="eione none">
-                  <p>流年起航<span class="rightone"></span>灼灼韶华</p>
-                  <p>流年车站感谢你的参与</p>
-                  <p>你一共填写了<span class="stationspan" id="ownTicket">100</span>张车票</p>
-                  <p>从此刻出发</p>
-                  <p>愿你前程似锦<span class="rightone"></span>归来仍是少年</p>
-                </div>
-              </div>
-            </div> -->
-        <!-- </div> -->
-        <!-- </div> -->
         <img class="moon" src="img/moon.png" onclick="return false">
         <img class="cloud" src="img/cloud.png" onclick="return false">
         <img src="img/arrow-gray.png" class="next" onclick="nextpage(); return false">
@@ -205,7 +185,7 @@
           <div class="one none">
             <p>光影长留痕<span class="rightone"></span>芳华永刻铭</p>
             <p>在照片墙的活动里</p>
-            <p>共计<span id="participant" class="photowallspan">1000</span>人参与拍照</p>
+            <p>共计<span id="participant" class="photowallspan"></span>人参与拍照</p>
             <p>恭喜你捕获一个小世界</p>
             <p>这必将是你回溯彼时的锚点</p>
           </div>
@@ -227,8 +207,8 @@
           </br>
           <div class="two none">
             <p>在创意市集活动里</p>
-            <p>共出售商品<span class="marketspan" id="selltotal">1000</span>件</p>
-            <p>共有<span class="marketspan" id="buyer">1000</span>人带走了这些物品</p>
+            <p>共出售商品<span class="marketspan" id="selltotal"></span>件</p>
+            <p>共有<span class="marketspan" id="buyer"></span>人带走了这些物品</p>
             <p>把它们收进行囊</p>
             <p>和你梦想一同启程</p>
             <p>踏上新的旅途吧</p>
@@ -245,11 +225,11 @@
         <div class="text summarizetext" id="summarizetext">
           <div class="eione none">
             <p>华工百步梯毕业季文化节共五个子活动</p>
-            <p>历时三个月<span class="rightone"></span>共计<span class="summarizespan" id="totalParticipant">34567</span>人次参与
-            </p>
-            <p>总宣页面浏览量<span class="summarizespan" id="propagation">10086</span>次</p>
-            <p>推文总浏览量<span class=" summarizespan" id="tweet">10086</span>次</p>
-            <p>线下参与人数达<span class=" summarizespan" id="offline">10086</span>人</p>
+            <!-- <p>历时三个月<span class="rightone"></span>共计<span class="summarizespan" id="totalParticipant"></span>人次参与
+            </p> -->
+            <p>总宣页面浏览量<span class="summarizespan" id="propagation"></span>次</p>
+            <p>推文总浏览量<span class="summarizespan" id="tweet"></span>次</p>
+            <p>线下参与人数达<span class="summarizespan" id="offline"></span>人</p>
             <p>希望参与的你能有所收获</p>
           </div>
           </br>
@@ -284,7 +264,7 @@
       height: window.innerHeight,
     })
 
-    var swiperClock, swiperDream, swiperStation;
+    var swiperClock, swiperDream;
 
     swiperDream = new Swiper('.swiperDream', {
       direction: 'vertical',
@@ -292,15 +272,8 @@
       height: window.innerHeight,
       touchReleaseOnEdges: true,
     })
-
-    // var swiperStation = new Swiper('.swiperStation', {
-    //   direction: 'vertical',
-    //   touchAngle: 90,
-    //   height: window.innerHeight,
-    //   touchReleaseOnEdges: true,
-    // })
   </script>
-  <script type="text/javascript" src="js/index.js"></script>
+  <script src="js/index.js"></script>
 
 </body>
 

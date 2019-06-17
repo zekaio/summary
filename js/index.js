@@ -1,19 +1,62 @@
+fetch(host + "backend/test.json", {
+    method: "post"
+})
+    .then(res => res.json())
+    .then(res => {
+        if (res.errcode == 401) {
+            // 跳转页面
+            // window.location.href = ;
+        } else {
+            document.getElementById("offlinetotal").innerText = res.timecapsule["offline_total"];
+            document.getElementById("onlinetotal").innerText = res.timecapsule["online_total"];
+            document.getElementById("QRtotal").innerText = res.timecapsule["qrcode_total"];
+            document.getElementById("createtotal").innerText = res.timecapsule["qrusers"];
+            document.getElementById("answertotal").innerText = res.timecapsule["question_users"];
+            document.getElementById("sendTotal").innerText = res.timecapsule["send_total"];
+            document.getElementById("offlineSend").innerText = res.timecapsule["offline"];
+            document.getElementById("onlineSend").innerText = res.timecapsule["online"];
+            document.getElementById("onlineReceive").innerText = res.timecapsule["rec_online"];
+            document.getElementById("QRreceive").innerText = res.timecapsule["rec_qr"];
+            document.getElementById("capsuleAnswer").innerText = res.timecapsule["questions"];
+            document.getElementById("adoptpokemon").innerText = res.pokemon["fairy_total"];
+            document.getElementById("ComeTrueDreams").innerText = res.pokemon["complete_total"];
+            document.getElementById("onlineDreamTotal").innerText = res.pokemon["users"];
+            document.getElementById("helpfulPeople").innerText = res.pokemon["helper_num"];
+            document.getElementById("helpNum").innerText = res.pokemon["help_num"];
+            document.getElementById("knowFriend").innerText = res.pokemon["friends"];
+            document.getElementById("getPok").innerText = res.pokemon["fairys"];
+            document.getElementById("ownDreams").innerText = res.pokemon["wishes"];
+            document.getElementById("ownDreamsComeTrue").innerText = res.pokemon["finish"];
+            document.getElementById("getBoard").innerText = res.station["board"];
+            document.getElementById("getTicket").innerText = res.station["passengers"];
+            document.getElementById("busload").innerText = res.station["tickets"];
+            document.getElementById("participant").innerText = res.photo;
+            document.getElementById("selltotal").innerText = res.market["goods"];
+            document.getElementById("buyer").innerText = res.market["people"];
+            // document.getElementById("totalParticipant").innerText = res.summary[""];
+            document.getElementById("propagation").innerText = res.summary["propagation"];
+            document.getElementById("tweet").innerText = res.summary["tweet"];
+            document.getElementById("offline").innerText = res.summary["participants"];
+        }
+    })
+
 window.onload = function () {
     imgonload = true;
+    console.log("imgonload");
     if (musiconload) {
+        document.getElementById("water").style.backgroundColor = "rgb(191,222,255)";
+        document.getElementById("water").style.backgroundPositionY = "0";
+        document.getElementById("num").innerText = 100;
+        clearInterval(horMoveInter);
         modifyPosition();
+        showed = true;
     }
 }
 
 function modifyPosition() {
-    document.getElementById("water").style.backgroundColor = "rgb(191,222,255)";
-    document.getElementById("water").style.backgroundPositionY = "0";
-    document.getElementById("num").innerText = 100;
-    clearInterval(horMoveInter);
     let icon = document.getElementById("icon");
     document.getElementById("main").style.display = "inline";
     /* 首页 */
-    //居中
     verposition("startpagecenter", 0.33);
     /* 首页end */
 
@@ -61,8 +104,6 @@ function modifyPosition() {
     /* 流年车站 */
     //文字定位
     verposition("stationtext", 5 / 11);
-    // verposition("stationtext1", 5 / 11);
-    // verposition("stationtext2", 5 / 11);
     /* 流年车站end */
 
     /* 照片墙 */
@@ -79,16 +120,36 @@ function modifyPosition() {
     /* 创意市集 */
     //文字定位
     verposition("markettext", 5 / 11);
-    if (document.getElementById("markettext").offsetTop < (icon.offsetHeight + icon.offsetTop)) {
-        document.getElementById("markettext").style.fontSize = "16px";
-        document.getElementById("markettext").style.lineHeight = "28px";
-        verposition("markettext", 5 / 11);
+    smallfont = 17;
+    smalllineheight = 38;
+    while (document.getElementById("markettext").offsetHeight > (height * 0.9 - (icon.offsetHeight + icon.offsetTop))) {
+        if (smalllineheight > 0) {
+            smalllineheight--;
+        }
+        else {
+            smallfont--;
+        }
+        document.getElementById("markettext").style.fontSize = smallfont + "px";
+        document.getElementById("markettext").style.lineHeight = smalllineheight + "px";
+        document.getElementById("markettext").style.marginTop = (icon.offsetHeight + icon.offsetTop) + "px"
     }
     //星星居中
     verposition("starbg", 0.5);
     /* 创意市集end */
 
     /* 总结 */
+    smallfont = 17;
+    smalllineheight = 38;
+    while (document.getElementById("summarizetext").offsetHeight > height * 0.8) {
+        if (smalllineheight > 0) {
+            smalllineheight--;
+        }
+        else {
+            smallfont--;
+        }
+        document.getElementById("summarizetext").style.fontSize = smallfont + "px";
+        document.getElementById("summarizetext").style.lineHeight = smalllineheight + "px";
+    }
     verposition("summarizetext", 5 / 11);
     /* 总结end */
     document.getElementById("loading").style.display = "none";
@@ -104,9 +165,6 @@ function nextpage() {
         case 2:
             swiperDream.slideNext();
             break;
-        // case 3:
-        //     swiperStation.slideNext();
-        //     break;
         default:
             swiperTotal.slideNext();
             break;
@@ -143,7 +201,6 @@ swiperTotal.on('slideChangeTransitionEnd', function () {
             break;
         case 2:
             swiperClock.destroy();
-            // swiperStation.destroy()
             initSwiperDream();
             if (currentPage == 3) {
                 swiperDream.slideTo(1, 0);
@@ -154,16 +211,10 @@ swiperTotal.on('slideChangeTransitionEnd', function () {
             break;
         case 3:
             swiperDream.destroy();
-            // initSwiperStation();
-            // if (currentPage == 4) {
-            // swiperStation.slideTo(1, 0);
-            //     currentPage = 0;
-            //     break;
-            // }
             currentPage = this.realIndex;
             break;
         case 4:
-            // swiperStation.destroy();
+
             currentPage = this.realIndex;
             break;
         case 6:
@@ -220,23 +271,6 @@ function initSwiperDream() {
         }
     })
 }
-
-// function initSwiperStation() {
-//     swiperStation = new Swiper('.swiperStation', {
-//         direction: 'vertical',
-//         touchAngle: 90,
-//         height: window.innerHeight,
-//         touchReleaseOnEdges: true,
-//     })
-
-//     swiperStation.on('slideChangeTransitionEnd', function () {
-//         if (this.realIndex) {
-//             currentPage = 0;
-//         } else {
-//             currentPage = 3;
-//         }
-//     })
-// }
 
 /* 时钟 */
 //时分秒针起始位置

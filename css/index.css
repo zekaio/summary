@@ -3,6 +3,10 @@
     padding: 0;
 }
 
+img {
+    user-select: none;
+}
+
 @keyframes poptoone {
     from {
         opacity: 0;
@@ -149,11 +153,11 @@ p {
 }
 
 .rightthree {
-    margin-left: 54px;
+    margin-left: 51px;
 }
 
 .rightone {
-    margin-left: 18px;
+    margin-left: 17px;
 }
 
 /* 隐藏文本 */
@@ -180,6 +184,15 @@ p {
 .swiper-slide-active>.text>.two {
     animation: poptoone 2s linear forwards;
     animation-delay: 1.5s;
+}
+
+.white {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background-color: white;
+    background-size: 100vw 100vh;
+    z-index: 1001;
 }
 
 /* loading */
@@ -592,37 +605,37 @@ p {
 
 /* 总结 */
 .swiper-slide-active>.summarizetext .one {
-    animation: poptoone 1.5s linear forwards;
+    animation: poptoeightypercent 1s linear forwards;
 }
 
 .swiper-slide-active>.summarizetext .two {
-    animation: poptoone 1.5s linear forwards;
-    animation-delay: 1.5s;
+    animation: poptoeightypercent 1s linear forwards;
+    animation-delay: 1s;
 }
 
 .swiper-slide-active>.summarizetext .three {
-    animation: poptoone 1.5s linear forwards;
-    animation-delay: 3s;
+    animation: poptoeightypercent 1s linear forwards;
+    animation-delay: 1.5s;
 }
 
 .swiper-slide-active>.summarizetext .four {
-    animation: poptoone 1.5s linear forwards;
-    animation-delay: 4.5s;
+    animation: poptoeightypercent 1s linear forwards;
+    animation-delay: 2s;
 }
 
 .swiper-slide-active>.summarizetext .five {
-    animation: poptoone 1.5s linear forwards;
-    animation-delay: 6s;
+    animation: poptoeightypercent 1s linear forwards;
+    animation-delay: 2.5s;
 }
 
 .swiper-slide-active>.summarizetext .six {
-    animation: poptoone 1.5s linear forwards;
-    animation-delay: 7.5s;
+    animation: poptoeightypercent 1s linear forwards;
+    animation-delay: 3s;
 }
 
 .swiper-slide-active>.summarizetext .seven {
-    animation: poptoone 1.5s linear forwards;
-    animation-delay: 9s;
+    animation: poptoeightypercent 1s linear forwards;
+    animation-delay: 3.5s;
 }
 
 .summarize {
