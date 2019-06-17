@@ -131,7 +131,6 @@ img {
     }
 }
 
-
 body {
     font-size: 17px;
 }
@@ -158,6 +157,10 @@ p {
 
 .rightone {
     margin-left: 17px;
+}
+
+.br {
+    margin-top: 17px;
 }
 
 /* 隐藏文本 */

@@ -36,7 +36,7 @@ fetch(host + "backend/test.json", {
             // document.getElementById("totalParticipant").innerText = res.summary[""];
             document.getElementById("propagation").innerText = res.summary["propagation"];
             document.getElementById("tweet").innerText = res.summary["tweet"];
-            document.getElementById("offline").innerText = res.summary["participants"];
+            // document.getElementById("offline").innerText = res.summary["participants"];
         }
     })
 
@@ -44,16 +44,18 @@ window.onload = function () {
     imgonload = true;
     console.log("imgonload");
     if (musiconload) {
-        document.getElementById("water").style.backgroundColor = "rgb(191,222,255)";
-        document.getElementById("water").style.backgroundPositionY = "0";
-        document.getElementById("num").innerText = 100;
-        clearInterval(horMoveInter);
         modifyPosition();
-        showed = true;
     }
 }
 
 function modifyPosition() {
+    document.getElementById("water").style.backgroundColor = "rgb(191,222,255)";
+    document.getElementById("water").style.backgroundPositionY = "0";
+    document.getElementById("num").innerText = 100;
+    clearTimeout(timeout);
+    clearInterval(horMoveInter);
+    clearInterval(getInter);
+    showed = true;
     let icon = document.getElementById("icon");
     document.getElementById("main").style.display = "inline";
     /* 首页 */

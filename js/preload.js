@@ -9,6 +9,7 @@ var imgonload = false;
 var showed = false;
 //音乐预加载
 var timeout = setTimeout(getIn, 5000);
+var getInter;
 var bgmInstance;
 var played = false;
 var loadmusic = new createjs.LoadQueue(false);
@@ -25,12 +26,7 @@ function showProgress() {
         console.log("musiconload");
         musiconload = true;
         if (imgonload) {
-            document.getElementById("water").style.backgroundColor = "rgb(191,222,255)";
-            document.getElementById("water").style.backgroundPositionY = "0";
-            document.getElementById("num").innerText = 100;
-            clearInterval(horMoveInter);
             modifyPosition();
-            showed = true;
         }
     }
 }
@@ -42,10 +38,13 @@ function showComplete() {
 
 function getIn() {
     if (imgonload && musiconload && !showed) {
-        document.getElementById("water").style.backgroundColor = "rgb(191,222,255)";
-        document.getElementById("water").style.backgroundPositionY = "0";
-        document.getElementById("num").innerText = 100;
-        clearInterval(horMoveInter);
+        modifyPosition();
+    } else {
+        getInter = setInterval(getIn_, 500);
+    }
+}
+function getIn_() {
+    if (imgonload && musiconload && !showed) {
         modifyPosition();
     }
 }
